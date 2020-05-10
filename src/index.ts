@@ -36,10 +36,10 @@ function setEventCallback(regexp: RegExp, regexpNoName: RegExp,
 setEventCallback(eventRegex.commandsRegex.start, eventRegex.commandsRegexNoName.start, (msg) => {
   if (msgTools.isAuthorized(msg) < 0) {
     // msgTools.sendUnauthorizedMessage(bot, msg);
-    msgTools.sendMessage(bot, msg, 'Bot is not usable outside @BhadooCloud group', -1);
+    msgTools.sendMessage(bot, msg, 'Bot is not usable outside @dlseeders group', -1);
   } else {
     msgTools.sendMessage(bot, msg,
-                         'Welcome to @BhadooCloud Group.\n\nVisit https://telegra.ph/Torrent-Drive-Commands-11-05 for updates in Group.',
+                         'Welcome to @dlseeders Group.',
                          -1);
   }
 });
@@ -592,7 +592,7 @@ function driveUploadCompleteCallback(err: string, gid: string, url: string, file
   if (err) {
     var message = err;
     console.error(`${gid}: Failed to upload - ${filePath}: ${message}`);
-    finalMessage = `File: <code>${fileName}</code> is uploaded to Team Drive.\n\nThis bot is in beta stage. Means there is 99% possibility your file is directly uploaded in Team Drive Bot1 Folder. If not check after 5 minutes. Check Pinned Post to Join Team Drive.\nIncase you cannot find your files this could be the error. \n${message}`;
+    finalMessage = `File: <code>${fileName}</code> is uploaded to Team Drive.\n\nThis bot is in beta stage. Means there is 99% possibility your file is directly uploaded in Team Drive Bot1 Folder. \n${message}`;
     cleanupDownload(gid, finalMessage);
   } else {
     console.log(`${gid}: Uploaded `);
